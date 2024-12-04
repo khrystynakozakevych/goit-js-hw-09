@@ -77,6 +77,7 @@ const galleryMarkup = images
 			class="gallery-image" 
 			src="${preview}" 
 			alt="${description}" 
+            width = "360px"
 			/>
 	</a>
 </li>
@@ -91,3 +92,10 @@ gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
 import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+// Initializing SimpleLightbox for styling
+const lightbox = new SimpleLightbox('.gallery a', {
+  captions: true, // Show captions if available or not
+  captionsData: 'alt', // Get the caption from given attribute
+  captionDelay: 250, // Adds a delay before the caption shows (in ms)
+});
